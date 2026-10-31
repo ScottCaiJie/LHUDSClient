@@ -1,0 +1,148 @@
+LHUDSClient 第三方组件及许可声明
+Third-Party Components and License Notices
+
+适用软件：LHUDSClient 1.0（Windows x64）
+发布日期：2026-10-28
+发布方：Chengdu Born-soft Technology Co.,Ltd.
+
+────────────────────────────────────────────────────────
+
+一、说明
+
+LHUDSClient（以下简称“本软件”）为闭源软件，但其运行依赖若干第三方组件。本文件列明本软件随附分发的第三方组件、其许可方式以及相关合规声明，以满足相应开源许可证的署名与告知要求。
+
+本软件未修改任何第三方组件的源代码，所有第三方库均以动态链接（DLL）方式加载，未进行静态链接。
+
+────────────────────────────────────────────────────────
+
+二、Qt 5.13.0
+
+1. 组件信息
+   名称：Qt
+   版本：5.13.0（64-bit，msvc 构建）
+   版权所有者：The Qt Company Ltd. 及 Qt 项目贡献者
+   项目主页：https://www.qt.io/
+
+2. 本软件使用的 Qt 模块与插件
+   Qt 库（DLL）：
+     - Qt5Core.dll
+     - Qt5Gui.dll
+     - Qt5Widgets.dll
+     - Qt5Network.dll
+     - Qt5Svg.dll
+   Qt 平台插件与插件：
+     - platforms/qwindows.dll
+     - styles/qwindowsvistastyle.dll
+     - imageformats/qgif.dll, qicns.dll, qico.dll, qjpeg.dll, qsvg.dll,
+       qtga.dll, qtiff.dll, qwbmp.dll, qwebp.dll
+     - iconengines/qsvgicon.dll
+     - bearer/qgenericbearer.dll
+   翻译文件：
+     - translations/qt_*.qm
+
+3. 许可方式
+   上述 Qt 组件依据 GNU 宽通用公共许可证第 3 版（GNU Lesser General Public
+   License, LGPLv3）授权。您也可以选择遵守 GPLv2/GPLv3 或商业许可条款。
+
+4. LGPLv3 合规声明
+   (1) 动态链接：本软件以动态链接方式使用 Qt 库，Qt 库以独立 DLL 文件形式随包分发。
+   (2) 可替换性：您可以自行使用兼容版本的 Qt5*.dll 替换发布包中的对应 DLL，
+       以实现对 Qt 库的修改，而无需修改本软件。本软件未对 Qt 库的替换设置任何
+       技术限制。
+   (3) 反向工程例外：本软件许可协议中关于禁止反向工程的条款，不适用于您为调试
+       自身对 Qt 库所做修改而进行的反向工程。
+   (4) 源码获取：Qt 5.13.0 完整源代码可从 Qt 官方归档免费下载：
+       https://download.qt.io/archive/qt/5.13/5.13.0/single/qt-everywhere-src-5.13.0.tar.xz
+   (5) 许可证文本：LGPLv3 完整文本可从以下地址获取：
+       https://www.gnu.org/licenses/lgpl-3.0.txt
+       建议在发布包中同时保留一份 LICENSE.LGPLv3.txt 副本。
+   (6) 本软件未修改 Qt 源代码；如您需要 Qt 的修改版本，可自行编译并替换 DLL。
+
+5. 商标声明
+   Qt 及相关标识是 The Qt Company Ltd. 的商标。本软件由 Chengdu Born-soft
+   Technology Co.,Ltd. 独立开发，与 The Qt Company Ltd. 无隶属关系，亦未获得
+   其背书或赞助。
+
+────────────────────────────────────────────────────────
+
+三、ANGLE（libEGL.dll / libGLESV2.dll）
+
+   名称：ANGLE（Almost Native Graphics Layer Engine）
+   版权所有者：The ANGLE Project Authors / Google Inc.
+   许可方式：BSD 3-Clause License
+   说明：用于将 OpenGL ES 调用转换为 Direct3D，随 Qt 的 Windows 构建一同分发。
+   许可证文本：https://chromium.googlesource.com/angle/angle/+/master/LICENSE
+
+────────────────────────────────────────────────────────
+
+四、D3Dcompiler_47.dll
+
+   名称：Microsoft Direct3D HLSL Compiler
+   版权所有者：Microsoft Corporation
+   说明：该文件为 Microsoft 可再分发组件，依据 Microsoft Windows SDK /
+        DirectX 可再分发条款随应用程序一同分发。
+   许可方式：Microsoft 软件许可条款（可再分发组件）
+
+────────────────────────────────────────────────────────
+
+五、opengl32sw.dll（Mesa 3D 软件渲染器）
+
+   名称：Mesa 3D（llvmpipe 软件渲染）
+   版权所有者：Mesa 项目贡献者
+   许可方式：MIT License
+   说明：Qt 在无可用硬件 OpenGL 驱动时使用的软件渲染后备方案。
+   许可证文本：https://docs.mesa3d.org/license.html
+
+────────────────────────────────────────────────────────
+
+六、Qt 内置的第三方库
+
+Qt 官方二进制发行版内部可能包含以下第三方组件（以编译进 Qt DLL 的形式存在），
+其版权与许可归各自权利人所有：
+
+   - zlib
+   - libpng
+   - libjpeg-turbo
+   - FreeType
+   - HarfBuzz
+   - PCRE2 / PCRE
+   - double-conversion
+   - 其他 Qt 官方列明的第三方组件
+
+上述组件的许可信息请参见 Qt 官方文档《Licenses Used in Qt》：
+   https://doc.qt.io/qt-5/licenses-used-in-qt.html
+以及 Qt 源码包中的 LICENSES 目录。
+
+────────────────────────────────────────────────────────
+
+七、其他说明
+
+1. 本软件未随附 OpenSSL 等加密库；Qt5Network 在需要 TLS 时会调用操作系统或
+   系统已安装的库。
+2. 本软件未使用 GPL-only 模块，未静态链接任何 LGPL 组件。
+3. 本软件未修改上述第三方组件的源代码。
+4. 本文件所列组件的许可条款可能随版本更新而变化，具体以各组件官方发布的
+   许可文本为准。
+
+────────────────────────────────────────────────────────
+
+八、许可证文本获取方式
+
+如您需要任何上述许可证的完整文本，可通过以下方式获取：
+   - LGPLv3：https://www.gnu.org/licenses/lgpl-3.0.txt
+   - GPLv3：https://www.gnu.org/licenses/gpl-3.0.txt
+   - BSD 3-Clause：https://opensource.org/licenses/BSD-3-Clause
+   - MIT：https://opensource.org/licenses/MIT
+   - Qt 第三方组件：https://doc.qt.io/qt-5/licenses-used-in-qt.html
+
+────────────────────────────────────────────────────────
+
+九、免责声明
+
+本文件仅为第三方组件许可信息的告知，不构成对任何第三方组件功能、质量或适用性
+的保证。第三方组件按其“现状”提供，其版权所有者不对本软件或其使用承担任何
+责任。因使用第三方组件产生的风险由使用者自行承担。
+
+────────────────────────────────────────────────────────
+
+Copyright © 2024-2027 Chengdu Born-soft Technology Co.,Ltd. All rights reserved.
